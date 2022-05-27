@@ -1,23 +1,22 @@
 /**
- *  获取新闻 做展示 
- *  1. 发送请求
- *  2. 拿数据 
- *  3. 存数据
- *  4. 做展示
+ *  获取新闻 做展示
  */
-import axios from 'axios'
+
 import React, { Component } from 'react'
-// 导入样式
+
+import axios from 'axios'
 import './css/index.css'
-// 导入axios
 export default class App extends Component {
-  // 初始化
-  state ={
+  // 初始化state
+  state = {
     list:[]
   }
-  // 1.发送请求
+  // 挂载完毕
   componentDidMount(){
-    axios.get('https://api.jiasiyuan.cn/news?page=1').then((res) =>{
+    // 1. 地址
+    const url = "https://api.jiasiyuan.cn/news?page=1"
+    // 1. 发送请求
+    axios.get(url).then(res=>{
       // 2. 拿数据
       console.log(res);
       // 3. 存数据
@@ -25,10 +24,12 @@ export default class App extends Component {
     })
   }
   // 4. 做展示
-  show = () =>{
-    return this.state.list.map((item,index) =>{
+  show(){
+    return this.state.list.map((item,index)=>{
       return <div key={index} className="container">
-        <div><img src={item.image} alt="" /></div>
+        <div>
+          <img src={item.image}  />
+        </div>
         <div>
           <div>{item.title}</div>
           <div>{item.passtime}</div>
@@ -36,6 +37,7 @@ export default class App extends Component {
       </div>
     })
   }
+
   render() {
     return (
       <div>{this.show()}</div>

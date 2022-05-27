@@ -1,0 +1,21 @@
+.container{
+    display:flex;
+    margin: 20px;
+    border:1px dashed aqua;
+}
+.container :last-child{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container :last-child :first-child{
+    width:200px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.container :last-child :last-child{
+    color:coral;
+}

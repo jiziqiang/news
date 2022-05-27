@@ -9,7 +9,10 @@
  */
 // 1. 导入axios
 import React, { Component } from 'react'
+// 2. 导入css样式
+import './css/index.css'
 
+// 3. 导入axios发送请求
 import axios from 'axios'
 export default class App extends Component {
   // 保存数据 初始化state
@@ -35,8 +38,8 @@ export default class App extends Component {
      }
      // 4. 做展示
      show(){
-      return  this.state.list.map((item,index) =>{
-        return <div key={index}>
+      return  this.state.list.map((item,index) => {
+        return <div key={index} className="container">
            <div>
              <img src={item.image}  />
            </div>

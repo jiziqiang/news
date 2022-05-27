@@ -29,8 +29,8 @@ export default class App extends Component {
   }
   // 4. 做展示
      show(){
-      return this.state.list.map((item,index)=>{
-        return <div key={index} className="cell">
+      return this.state.list.map((item,index)=>
+         <div key={index} className="cell">
            <div>
              <img src={item.image}  />
            </div>
@@ -39,7 +39,7 @@ export default class App extends Component {
              <div>{item.passtime}</div>
            </div>
          </div>
-       })
+       )
      }
     // show(){
     //   return this.state.list.map((item,index)=>(

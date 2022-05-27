@@ -35,8 +35,8 @@ export default class App extends Component {
      }
      // 4. 做展示
      show(){
-      return  this.state.list.map((item,index) =>{
-         <div key={index}>
+      return  this.state.list.map((item,index) =>
+        return <div key={index}>
            <div>
              <img src={item.image}  />
            </div>
@@ -45,7 +45,7 @@ export default class App extends Component {
              <div>{item.passtime}</div>
            </div>
          </div>
-       })
+       )
      }
      // 渲染
   render(){
